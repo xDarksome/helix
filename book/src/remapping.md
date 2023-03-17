@@ -48,6 +48,31 @@ c = ":run-shell-command cargo build"
 t = ":run-shell-command cargo test"
 ```
 
+## Custom descriptions
+
+Remapping of singular typable commands or seqences of any commands, can be given a custom description for the keymap menus (infoboxes).
+This is the text on each row that's paired together with each key event trigger.
+
+```toml
+[keys.normal]
+A-k = { description = "Edit Config", exec = ":open ~/.config/helix/config.toml" }
+# (Note that the example example above mostly for illustrative purposes, a :config-open is provided out of the box.)
+"C-r" = { "description" = "Sort selection", "exec" = ["split_selection_on_newline", ":sort", "collapse_selection", "keep_primary_selection"]             }
+```
+
+A custom descriptions can also be defined for sub-menus.
+Aside from being them being shown in the parent-menu infobox,
+sub-menu descriptions also act as infobox titles for the submenu itself.
+
+```toml
+# A submenu accessed though space->f in normal mode.
+[keys.normal.space.f]
+description = "File"
+f = "file_picker"
+s = { description = "Save", exec = ":write" }
+c = { description = "Format", exec = ":format" }
+```
+
 ## Special keys and modifiers
 
 Ctrl, Shift and Alt modifiers are encoded respectively with the prefixes
@@ -75,5 +100,13 @@ Ctrl, Shift and Alt modifiers are encoded respectively with the prefixes
 
 Keys can be disabled by binding them to the `no_op` command.
 
+<<<<<<< HEAD
 A list of commands is available in the [Keymap](https://docs.helix-editor.com/keymap.html) documentation
  and in the source code at [`helix-term/src/commands.rs`](https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs) at the invocation of `static_commands!` macro and the `TypableCommandList`.
+=======
+Making a mode "sticky" can be achieved by adding `sticky = true` to the mapping. 
+(Predefined sticky keytries can like wise be made unsticky with `sticky = false`.)
+
+Commands can be found at [Keymap](https://docs.helix-editor.com/keymap.html) Commands.
+> Commands can also be found in the source code at [`helix-term/src/commands.rs`](https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs) at the invocation of `static_commands!` macro and the `TypableCommandList`.
+>>>>>>> a0d918a47a7fa7ddeaf07963e148ce4993bb9020

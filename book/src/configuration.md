@@ -50,11 +50,18 @@ signal to the Helix process on Unix operating systems, such as by using the comm
 | `auto-save` | Enable automatic saving on the focus moving away from Helix. Requires [focus event support](https://github.com/helix-editor/helix/wiki/Terminal-Support) from your terminal | `false` |
 | `idle-timeout` | Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant | `400` |
 | `completion-trigger-len` | The min-length of word under cursor to trigger autocompletion | `2` |
+<<<<<<< HEAD
 | `completion-replace` | Set to `true` to make completions always replace the entire word and not just the part before the cursor | `false` |
 | `auto-info` | Whether to display info boxes | `true` |
 | `true-color` | Set to `true` to override automatic detection of terminal truecolor support in the event of a false negative | `false` |
 | `undercurl` | Set to `true` to override automatic detection of terminal undercurl support in the event of a false negative | `false` |
 | `rulers` | List of column positions at which to display the rulers. Can be overridden by language specific `rulers` in `languages.toml` file | `[]` |
+=======
+| `auto-info` | Whether to display infoboxes | `true` |
+| `sorted-infobox` | Sort infoboxes by key event category rather than by predefined command categories | `false` |
+| `true-color` | Set to `true` to override automatic detection of terminal truecolor support in the event of a false negative. | `false` |
+| `rulers` | List of column positions at which to display the rulers. Can be overridden by language specific `rulers` in `languages.toml` file. | `[]` |
+>>>>>>> a0d918a47a7fa7ddeaf07963e148ce4993bb9020
 | `bufferline` | Renders a line at the top of the editor displaying open buffers. Can be `always`, `never` or `multiple` (only shown if more than one buffer is in use) | `never` |
 | `color-modes` | Whether to color the mode indicator with different colors depending on the mode itself | `false` |
 | `text-width` | Maximum line length. Used for the `:reflow` command and soft-wrapping if `soft-wrap.wrap_at_text_width` is set | `80` |
